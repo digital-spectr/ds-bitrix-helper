@@ -1,6 +1,7 @@
 {
   "name": "digital-spectr/ds-bitrix-helper",
   "description": "Helpers",
+  "license": "MIT",
   "keywords": [
     "helpers",
     "bitrix",
