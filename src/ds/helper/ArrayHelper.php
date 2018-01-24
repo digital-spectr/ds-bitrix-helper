@@ -6,7 +6,7 @@
  * Time: 16:36
  */
 
-
+namespace ds\helper;
 
 class ArrayHelper
 {
@@ -15,7 +15,7 @@ class ArrayHelper
      * @param $array
      * @return stdClass
      */
-    function array_to_object($array) {
+    public static function arrayToObject($array) {
         $obj = new stdClass;
         foreach($array as $k => $v) {
             if(strlen($k)) {
@@ -30,8 +30,8 @@ class ArrayHelper
     }
 
     /**
-     * Сортирует вложенные массивы в многомерном массиве
-     * по определенному значению ключа вложенных массивов
+     * РЎРѕСЂС‚РёСЂСѓРµС‚ РІР»РѕР¶РµРЅРЅС‹Рµ РјР°СЃСЃРёРІС‹ РІ РјРЅРѕРіРѕРјРµСЂРЅРѕРј РјР°СЃСЃРёРІРµ
+     * РїРѕ РѕРїСЂРµРґРµР»РµРЅРЅРѕРјСѓ Р·РЅР°С‡РµРЅРёСЋ РєР»СЋС‡Р° РІР»РѕР¶РµРЅРЅС‹С… РјР°СЃСЃРёРІРѕРІ
      *
      * @param $array
      * @param $value
@@ -64,14 +64,14 @@ class ArrayHelper
     }
 
     /**
-     * генерация массива случайных значений, в котром повторяющиеся элементы не
-     * расположены друг за другом
+     * РіРµРЅРµСЂР°С†РёСЏ РјР°СЃСЃРёРІР° СЃР»СѓС‡Р°Р№РЅС‹С… Р·РЅР°С‡РµРЅРёР№, РІ РєРѕС‚СЂРѕРј РїРѕРІС‚РѕСЂСЏСЋС‰РёРµСЃСЏ СЌР»РµРјРµРЅС‚С‹ РЅРµ
+     * СЂР°СЃРїРѕР»РѕР¶РµРЅС‹ РґСЂСѓРі Р·Р° РґСЂСѓРіРѕРј
      * @param $start
      * @param $end
      * @param $count
      * @return array
      */
-    public static function generate_rand_massive($start, $end, $count)
+    public static function generateRandMassive($start, $end, $count)
     {
 
         $M = array();
@@ -93,15 +93,15 @@ class ArrayHelper
 
 
     /**
-     * генерация массива перестановок
+     * РіРµРЅРµСЂР°С†РёСЏ РјР°СЃСЃРёРІР° РїРµСЂРµСЃС‚Р°РЅРѕРІРѕРє
      * @param $start
      * @param $end
      * @param $count
      * @return array
-     * TODO: возможно будет дописан или переписан
+     * TODO: РІРѕР·РјРѕР¶РЅРѕ Р±СѓРґРµС‚ РґРѕРїРёСЃР°РЅ РёР»Рё РїРµСЂРµРїРёСЃР°РЅ
      *
      */
-    public static function generate_all_permutation($start, $end, $count)
+    public static function generateAllPermutation($start, $end, $count)
     {
 
         $tmp_number = ($end - $start) + 1;
@@ -123,15 +123,15 @@ class ArrayHelper
 
 
     /**
-     * генерация массива перестановок с учётом кол-ва элементов в строке
+     * РіРµРЅРµСЂР°С†РёСЏ РјР°СЃСЃРёРІР° РїРµСЂРµСЃС‚Р°РЅРѕРІРѕРє СЃ СѓС‡С‘С‚РѕРј РєРѕР»-РІР° СЌР»РµРјРµРЅС‚РѕРІ РІ СЃС‚СЂРѕРєРµ
      * @param $start
      * @param $end
      * @param $count
-     * @param $row - количество элементов в строке
+     * @param $row - РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ СЃС‚СЂРѕРєРµ
      * @return array
      *
-     * пример:
-     * ArrayHelper::generate_all_permutation_custom(1, 4, 10, 3)
+     * РїСЂРёРјРµСЂ:
+     * ArrayHelper::generateAllPermutationCustom(1, 4, 10, 3)
      *
      *
      * Array
@@ -150,7 +150,7 @@ class ArrayHelper
      * [11] => 4
      * )
      */
-    public static function generate_all_permutation_custom($start, $end, $count, $row)
+    public static function generateAllPermutationCustom($start, $end, $count, $row)
     {
         $tmp_number2 = ($end - $start) + 1;
         $tmp_number = $row;
@@ -242,7 +242,7 @@ class ArrayHelper
      *
      *
      */
-    public static function array_msort($array, $cols)
+    public static function arrayMsort($array, $cols)
     {
         $colarr = array();
         foreach ($cols as $col => $order) {
@@ -272,7 +272,7 @@ class ArrayHelper
 
     /**
      * @return mixed
-     * сортировка многомерного массива
+     * СЃРѕСЂС‚РёСЂРѕРІРєР° РјРЅРѕРіРѕРјРµСЂРЅРѕРіРѕ РјР°СЃСЃРёРІР°
      *
      * $arResult["TOP_ITEMS"] = ArrayHelper::arrayOrderBy($arResult["TOP_ITEMS"], "SORT", SORT_ASC);
      * $arResult["BOTTOM_ITEMS"] = ArrayHelper::arrayOrderBy($arResult["BOTTOM_ITEMS"], "SORT", SORT_ASC);
@@ -299,11 +299,11 @@ class ArrayHelper
 
 
     /**
-     * парсинг временной таблицы
+     * РїР°СЂСЃРёРЅРі РІСЂРµРјРµРЅРЅРѕР№ С‚Р°Р±Р»РёС†С‹
      *
-     * пример:
-     * вход: {"0":[["10:00","20:00"]],"1":[["10:00","20:00"]],"2":[["10:00","20:00"]],"3":[["10:00","20:00"]],"4":[["10:00","20:00"]],"5":[["10:00","20:00"]],"6":[["10:00","20:00"]]}
-     * выход:
+     * РїСЂРёРјРµСЂ:
+     * РІС…РѕРґ: {"0":[["10:00","20:00"]],"1":[["10:00","20:00"]],"2":[["10:00","20:00"]],"3":[["10:00","20:00"]],"4":[["10:00","20:00"]],"5":[["10:00","20:00"]],"6":[["10:00","20:00"]]}
+     * РІС‹С…РѕРґ:
      * Array
      * (
      * [0] => Array
@@ -369,8 +369,8 @@ class ArrayHelper
 
 
         } else {
-            //в некоторых случаях json_decode у меня не срабатывал, поэтому я написал
-            //костыльный запасной ввариант
+            //РІ РЅРµРєРѕС‚РѕСЂС‹С… СЃР»СѓС‡Р°СЏС… json_decode Сѓ РјРµРЅСЏ РЅРµ СЃСЂР°Р±Р°С‚С‹РІР°Р», РїРѕСЌС‚РѕРјСѓ СЏ РЅР°РїРёСЃР°Р»
+            //РєРѕСЃС‚С‹Р»СЊРЅС‹Р№ Р·Р°РїР°СЃРЅРѕР№ РІРІР°СЂРёР°РЅС‚
 
             $TIMETABLE = trim($TIMETABLE, "{");
             $TIMETABLE = trim($TIMETABLE, "}");
@@ -403,7 +403,7 @@ class ArrayHelper
 
 
     /**
-     * Поиск по значению ключа в многомерном массиве
+     * РџРѕРёСЃРє РїРѕ Р·РЅР°С‡РµРЅРёСЋ РєР»СЋС‡Р° РІ РјРЅРѕРіРѕРјРµСЂРЅРѕРј РјР°СЃСЃРёРІРµ
      * @param $array
      * @param $key
      * @param $value
@@ -451,7 +451,7 @@ class ArrayHelper
     }
 
     /**
-     *  удалить элемент по ключу из многомерного массива
+     *  СѓРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚ РїРѕ РєР»СЋС‡Сѓ РёР· РјРЅРѕРіРѕРјРµСЂРЅРѕРіРѕ РјР°СЃСЃРёРІР°
      * @param $array
      * @param $keyParameter
      */
@@ -472,7 +472,7 @@ class ArrayHelper
 
 
     /**
-     *  удалить элемент из многомерного массива
+     *  СѓРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚ РёР· РјРЅРѕРіРѕРјРµСЂРЅРѕРіРѕ РјР°СЃСЃРёРІР°
      * @param $array
      * @param $val
      */
@@ -493,7 +493,7 @@ class ArrayHelper
 
 
     /**
-     * удаление из массива элемента в определённым ключом
+     * СѓРґР°Р»РµРЅРёРµ РёР· РјР°СЃСЃРёРІР° СЌР»РµРјРµРЅС‚Р° РІ РѕРїСЂРµРґРµР»С‘РЅРЅС‹Рј РєР»СЋС‡РѕРј
      * @param $keyElementToRemove
      * @param $array
      */
@@ -506,7 +506,7 @@ class ArrayHelper
 
 
     /**
-     * среднее арифметическое массива
+     * СЃСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ РјР°СЃСЃРёРІР°
      * @param $arCoordinates
      * @return float|int
      */
@@ -669,7 +669,7 @@ class ArrayHelper
      * @param null $indexKey
      * @return array|bool
      */
-    public static function array_column(array $input, $columnKey, $indexKey = null) {
+    public static function arrayColumn(array $input, $columnKey, $indexKey = null) {
         $array = array();
         foreach ($input as $value) {
             if ( !array_key_exists($columnKey, $value)) {

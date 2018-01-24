@@ -5,7 +5,7 @@
  * Date: 21.01.2018
  * Time: 16:36
  */
-
+namespace ds\helper;
 
 class UrlHelper
 {
@@ -26,8 +26,8 @@ class UrlHelper
 
 
     /**
-     * удаление параметров из текущего URL
-     * @param $M - массив параметров, которые нужно удалить
+     * СѓРґР°Р»РµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ РёР· С‚РµРєСѓС‰РµРіРѕ URL
+     * @param $M - РјР°СЃСЃРёРІ РїР°СЂР°РјРµС‚СЂРѕРІ, РєРѕС‚РѕСЂС‹Рµ РЅСѓР¶РЅРѕ СѓРґР°Р»РёС‚СЊ
      * @return string
      */
     public static function removeKeyFromCurrentURL($M) {
@@ -49,7 +49,7 @@ class UrlHelper
 
 
     /**
-     * удаление параметров из URL
+     * СѓРґР°Р»РµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ РёР· URL
      * @param $url
      * @param $M
      * @return string

@@ -5,13 +5,13 @@
  * Date: 21.01.2018
  * Time: 16:36
  */
-
+namespace ds\helper;
 use Bitrix\Main\Loader;
 
 class CommonHelper
 {
 
-    const EARTH_RADIUS = 6372795; // Радиус земли
+    const EARTH_RADIUS = 6372795; // Р Р°РґРёСѓСЃ Р·РµРјР»Рё
 
     /**
      * Returns right word plural form
@@ -21,20 +21,20 @@ class CommonHelper
      * @param string $form5_0
      * @return string
      *
-     * пример вызова
+     * РїСЂРёРјРµСЂ РІС‹Р·РѕРІР°
      * $arWords = array(
-     * array("товар", "товара", "товаров"),
-     * array("матрас", "матраса", "матрасов"),
-     * array("кровать", "кровати", "кроватей"),
-     * array("шкаф", "шкафа", "шкафов"),
-     * array("коллекция", "коллекции", "коллекций")
+     * array("С‚РѕРІР°СЂ", "С‚РѕРІР°СЂР°", "С‚РѕРІР°СЂРѕРІ"),
+     * array("РјР°С‚СЂР°СЃ", "РјР°С‚СЂР°СЃР°", "РјР°С‚СЂР°СЃРѕРІ"),
+     * array("РєСЂРѕРІР°С‚СЊ", "РєСЂРѕРІР°С‚Рё", "РєСЂРѕРІР°С‚РµР№"),
+     * array("С€РєР°С„", "С€РєР°С„Р°", "С€РєР°С„РѕРІ"),
+     * array("РєРѕР»Р»РµРєС†РёСЏ", "РєРѕР»Р»РµРєС†РёРё", "РєРѕР»Р»РµРєС†РёР№")
      * );
      *
      * foreach($arWords as $keyWords => $itemWords){
      * Debug( CommonHelper::getFormattedEnding(rand(0, 1000), $itemWords[0], $itemWords[1], $itemWords[2]) );
      * }
      */
-    public static function getFormattedEnding($count, $form1 = "балл", $form2_4 = "балла", $form5_0 = "баллов")
+    public static function getFormattedEnding($count, $form1 = "Р±Р°Р»Р»", $form2_4 = "Р±Р°Р»Р»Р°", $form5_0 = "Р±Р°Р»Р»РѕРІ")
     {
 
         $strForm = "";
@@ -60,9 +60,9 @@ class CommonHelper
 
 
     /**
-     * Форматирует окончание в соответствии с переданным числом
+     * Р¤РѕСЂРјР°С‚РёСЂСѓРµС‚ РѕРєРѕРЅС‡Р°РЅРёРµ РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ РїРµСЂРµРґР°РЅРЅС‹Рј С‡РёСЃР»РѕРј
      * @param $iNumber
-     * @param $aEndings = array('книга', 'книги', 'книг')
+     * @param $aEndings = array('РєРЅРёРіР°', 'РєРЅРёРіРё', 'РєРЅРёРі')
      *
      * @return mixed
      */
@@ -101,7 +101,7 @@ class CommonHelper
     }
 
     /**
-     * Помощник для дебага сущностей в окне браузера
+     * РџРѕРјРѕС‰РЅРёРє РґР»СЏ РґРµР±Р°РіР° СЃСѓС‰РЅРѕСЃС‚РµР№ РІ РѕРєРЅРµ Р±СЂР°СѓР·РµСЂР°
      * @param mixed $var
      * @param bool $vardump
      * @param bool $return
@@ -152,7 +152,7 @@ class CommonHelper
     }
 
     /**
-     * авторизация под админом
+     * Р°РІС‚РѕСЂРёР·Р°С†РёСЏ РїРѕРґ Р°РґРјРёРЅРѕРј
      */
     public static function adminAuthorize() {
         global $USER;
@@ -161,7 +161,7 @@ class CommonHelper
 
 
     /**
-     * Высчитывает расстояние между двумя координатами
+     * Р’С‹СЃС‡РёС‚С‹РІР°РµС‚ СЂР°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ РґРІСѓРјСЏ РєРѕРѕСЂРґРёРЅР°С‚Р°РјРё
      * @param $lat1
      * @param $lon1
      * @param $lat2

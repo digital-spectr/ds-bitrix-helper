@@ -5,14 +5,14 @@
  * Date: 21.01.2018
  * Time: 16:36
  */
-
+namespace ds\helper;
 use Bitrix\Main\Loader;
 
 class CatalogHelper
 {
 
     /**
-     * Приводит товары в нужное состоние активен/неактивек
+     * РџСЂРёРІРѕРґРёС‚ С‚РѕРІР°СЂС‹ РІ РЅСѓР¶РЅРѕРµ СЃРѕСЃС‚РѕРЅРёРµ Р°РєС‚РёРІРµРЅ/РЅРµР°РєС‚РёРІРµРє
      * @param $IBLOCK_ID
      */
     public static function normalizeActiveCatalogState($IBLOCK_ID){

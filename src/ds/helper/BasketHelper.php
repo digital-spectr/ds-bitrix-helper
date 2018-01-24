@@ -5,13 +5,13 @@
  * Date: 21.01.2018
  * Time: 16:36
  */
-
+namespace ds\helper;
 
 class BasketHelper
 {
 
     /**
-     * есть ли товар в корзине ?
+     * РµСЃС‚СЊ Р»Рё С‚РѕРІР°СЂ РІ РєРѕСЂР·РёРЅРµ ?
      * @param $productId
      * @return string
      */
@@ -83,7 +83,7 @@ class BasketHelper
 
 
     /**
-     * количество товара в корзине
+     * РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕРІР°СЂР° РІ РєРѕСЂР·РёРЅРµ
      * @param $productId
      * @return int
      */

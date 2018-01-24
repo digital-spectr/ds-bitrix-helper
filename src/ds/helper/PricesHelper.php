@@ -5,14 +5,14 @@
  * Date: 21.01.2018
  * Time: 16:36
  */
-
+namespace ds\helper;
 
 class PricesHelper
 {
 
     /**
-     * форматирование цены
-     * пример вызова formatCurrency(11800.95, "RUR");
+     * С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ С†РµРЅС‹
+     * РїСЂРёРјРµСЂ РІС‹Р·РѕРІР° formatCurrency(11800.95, "RUR");
      * @param $fSum
      * @param $strCurrency
      * @return mixed|string
@@ -55,7 +55,7 @@ class PricesHelper
 
 
     /**
-     * вычисление скидки
+     * РІС‹С‡РёСЃР»РµРЅРёРµ СЃРєРёРґРєРё
      * @param $actionPrice
      * @param $oldPrice
      * @return mixed
@@ -64,11 +64,11 @@ class PricesHelper
     {
 
 
-        //вычислить разницу между старой и акционной ценой в рублях
+        //РІС‹С‡РёСЃР»РёС‚СЊ СЂР°Р·РЅРёС†Сѓ РјРµР¶РґСѓ СЃС‚Р°СЂРѕР№ Рё Р°РєС†РёРѕРЅРЅРѕР№ С†РµРЅРѕР№ РІ СЂСѓР±Р»СЏС…
         $DISCOUNT_DIFF = $oldPrice - $actionPrice;
 
 
-        //разница между старой и акционной ценой в процентах
+        //СЂР°Р·РЅРёС†Р° РјРµР¶РґСѓ СЃС‚Р°СЂРѕР№ Рё Р°РєС†РёРѕРЅРЅРѕР№ С†РµРЅРѕР№ РІ РїСЂРѕС†РµРЅС‚Р°С…
         $DISCOUNT_DIFF_PERCENT = round((($oldPrice - $actionPrice) / $oldPrice) * 100);
 
         $arRes["DISCOUNT_VALUE"] = $actionPrice;

@@ -5,7 +5,7 @@
  * Date: 21.01.2018
  * Time: 16:36
  */
-
+namespace ds\helper;
 use Bitrix\Main\Loader;
 
 class CurrencyHelper
@@ -19,12 +19,12 @@ class CurrencyHelper
      * @param string $currency
      * @return string
      *
-     * пример вызова
+     * РїСЂРёРјРµСЂ РІС‹Р·РѕРІР°
      * for($i = 0; $i < 10; $i++){
      * Debug( CurrencyHelper::getFormattedEndingCurrency(rand(0, 1000)) );
      * }
      */
-    public static function getFormattedEndingCurrency($count, $currency = "RUB", $form1 = "рубль", $form2_4 = "рубля", $form5_0 = "рублей")
+    public static function getFormattedEndingCurrency($count, $currency = "RUB", $form1 = "СЂСѓР±Р»СЊ", $form2_4 = "СЂСѓР±Р»СЏ", $form5_0 = "СЂСѓР±Р»РµР№")
     {
         Loader::includeModule('currency');
 

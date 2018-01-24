@@ -5,14 +5,14 @@
  * Date: 21.01.2018
  * Time: 16:36
  */
-
+namespace ds\helper;
 use Bitrix\Main\Loader;
 
 class LogHelper
 {
 
     /**
-     * запись строковых данных в лог
+     * Р·Р°РїРёСЃСЊ СЃС‚СЂРѕРєРѕРІС‹С… РґР°РЅРЅС‹С… РІ Р»РѕРі
      * @param $str
      * @param $fileName
      * @param $path
@@ -26,8 +26,6 @@ class LogHelper
         );
 
     }
-
-
 
 
 

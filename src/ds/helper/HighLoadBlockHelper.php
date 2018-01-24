@@ -5,10 +5,10 @@
  * Date: 21.01.2018
  * Time: 16:36
  */
-
+namespace ds\helper;
 /**
  * Class HelperHighLoadBlock
- * вспомогательный класс для работы с Highloadblock
+ * РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Р№ РєР»Р°СЃСЃ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ Highloadblock
  */
 use Bitrix\Highloadblock\HighloadBlockTable as HLBT;
 
@@ -17,7 +17,7 @@ CModule::IncludeModule('highloadblock');
 class HighLoadBlockHelper
 {
     /**
-     * получение экземпляра класса
+     * РїРѕР»СѓС‡РµРЅРёРµ СЌРєР·РµРјРїР»СЏСЂР° РєР»Р°СЃСЃР°
      * @param HlBlockId $
      * @return \Bitrix\Main\Entity\DataManager|bool
      */
@@ -39,9 +39,9 @@ class HighLoadBlockHelper
     }
 
     /**
-     * получение данных из HL блока по XML_ID элемнта
-     * @param $HLiB_name - название таблицы, например b_hlbd_razmermatrasovshirina
-     * @param $XML_ID - внешний код элемента, например bDkMMuzT
+     * РїРѕР»СѓС‡РµРЅРёРµ РґР°РЅРЅС‹С… РёР· HL Р±Р»РѕРєР° РїРѕ XML_ID СЌР»РµРјРЅС‚Р°
+     * @param $HLiB_name - РЅР°Р·РІР°РЅРёРµ С‚Р°Р±Р»РёС†С‹, РЅР°РїСЂРёРјРµСЂ b_hlbd_razmermatrasovshirina
+     * @param $XML_ID - РІРЅРµС€РЅРёР№ РєРѕРґ СЌР»РµРјРµРЅС‚Р°, РЅР°РїСЂРёРјРµСЂ bDkMMuzT
      * @return mixed
      */
     public static function GetElementByXMLID($HLiB_name, $XML_ID)

@@ -6,13 +6,13 @@
  * Time: 16:36
  */
 
-
+namespace ds\helper;
 
 class StringHelper
 {
 
     /**
-     * проверяет, начинается ли строка с указанного символа/строки
+     * РїСЂРѕРІРµСЂСЏРµС‚, РЅР°С‡РёРЅР°РµС‚СЃСЏ Р»Рё СЃС‚СЂРѕРєР° СЃ СѓРєР°Р·Р°РЅРЅРѕРіРѕ СЃРёРјРІРѕР»Р°/СЃС‚СЂРѕРєРё
      * @param $haystack
      * @param $needle
      * @return bool
@@ -24,7 +24,7 @@ class StringHelper
     }
 
     /**
-     * проверяет, заканчивается ли строка указанным символом/строкой
+     * РїСЂРѕРІРµСЂСЏРµС‚, Р·Р°РєР°РЅС‡РёРІР°РµС‚СЃСЏ Р»Рё СЃС‚СЂРѕРєР° СѓРєР°Р·Р°РЅРЅС‹Рј СЃРёРјРІРѕР»РѕРј/СЃС‚СЂРѕРєРѕР№
      * @param $haystack
      * @param $needle
      * @return bool
@@ -41,7 +41,7 @@ class StringHelper
 
 
     /**
-     * сокрытие номера телефона
+     * СЃРѕРєСЂС‹С‚РёРµ РЅРѕРјРµСЂР° С‚РµР»РµС„РѕРЅР°
      * @param $strPhone
      * @return string
      */
@@ -51,11 +51,11 @@ class StringHelper
 
 
     /**
-     * мультибайтовый аналог ucfirst — преобразует первый символ строки в верхний регистр
+     * РјСѓР»СЊС‚РёР±Р°Р№С‚РѕРІС‹Р№ Р°РЅР°Р»РѕРі ucfirst вЂ” РїСЂРµРѕР±СЂР°Р·СѓРµС‚ РїРµСЂРІС‹Р№ СЃРёРјРІРѕР» СЃС‚СЂРѕРєРё РІ РІРµСЂС…РЅРёР№ СЂРµРіРёСЃС‚СЂ
      * @param $string
      * @return bool|string
      */
-    public static function mb_ucfirst($string) {
+    public static function mbUcfirst($string) {
         if (!function_exists('mb_ucfirst') && function_exists('mb_substr')) {
             $string = mb_strtoupper(mb_substr($string, 0, 1)) . mb_substr($string, 1);
             return $string;

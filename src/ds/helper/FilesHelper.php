@@ -5,7 +5,7 @@
  * Date: 21.01.2018
  * Time: 16:36
  */
-
+namespace ds\helper;
 use Bitrix\Main\Application;
 use Bitrix\Main\Web\Uri;
 

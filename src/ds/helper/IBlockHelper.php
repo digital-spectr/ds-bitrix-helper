@@ -5,7 +5,7 @@
  * Date: 21.01.2018
  * Time: 16:36
  */
-
+namespace ds\helper;
 if (!CModule::IncludeModule('iblock')) {
     ShowError(GetMessage('IBLOCK_MODULE_NOT_INSTALLED'));
     return;
@@ -14,7 +14,7 @@ if (!CModule::IncludeModule('iblock')) {
 class IBlockHelper
 {
     /**
-     * Полностью очищает инфоблок
+     * РџРѕР»РЅРѕСЃС‚СЊСЋ РѕС‡РёС‰Р°РµС‚ РёРЅС„РѕР±Р»РѕРє
      *
      * @param $iblockID
      */
@@ -88,7 +88,7 @@ class IBlockHelper
     }
 
     /**
-     * не пустая ли секция
+     * РЅРµ РїСѓСЃС‚Р°СЏ Р»Рё СЃРµРєС†РёСЏ
      * @param $sectionID
      * @param int $iblockID
      * @return bool

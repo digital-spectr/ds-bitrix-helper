@@ -1,12 +1,12 @@
 <?php
-
+namespace ds\helper;
 class FacetIndexHelper
 {
 
 
     /**
-     * ñáðîñ ôàñåòíîãî èíäåêñà
-     * @param $iblockId - id èíôîáëîêà, èíäåêñ êîòîðîãî íóæíî ñáðîñèòü
+     * ÑÐ±Ñ€Ð¾Ñ Ñ„Ð°ÑÐµÑ‚Ð½Ð¾Ð³Ð¾ Ð¸Ð½Ð´ÐµÐºÑÐ°
+     * @param $iblockId - id Ð¸Ð½Ñ„Ð¾Ð±Ð»Ð¾ÐºÐ°, Ð¸Ð½Ð´ÐµÐºÑ ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ Ð½ÑƒÐ¶Ð½Ð¾ ÑÐ±Ñ€Ð¾ÑÐ¸Ñ‚ÑŒ
      */
     public static function cleanFacetIndex($iblockId)
     {
