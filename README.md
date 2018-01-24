@@ -2,8 +2,8 @@
 Полезные методы для работы с Bitrix'ом и не только
 
 ## Список пакетов
-
-###**ArrayHelper** - массивы
+##
+**ArrayHelper** - массивы
 
 `arrayToObject` - преобразование массива в объект
 
@@ -37,22 +37,22 @@
 `diverseArray` - долго описывать, смотрите комментарий перед методом
 
 
-
-###**BasketHelper** - корзина
+##
+**BasketHelper** - корзина
 
 `isProductBasket` - есть ли товар в корзине ?
 
 `productQuantityBasket` - количество товара в корзине
 
 
-
-###**CatalogHelper** - каталог
+##
+**CatalogHelper** - каталог
 
 `normalizeActiveCatalogState` - приводит товары в нужное состоние активен/неактивен, опираясь на колчество
 
 
-
-###**CommonHelper** - хелперы общего назначения
+##
+**CommonHelper** - хелперы общего назначения
 
 `getFormattedEnding` 
 `getNumEnding` - форматирует окончание в соответствии с переданным числом
@@ -69,40 +69,40 @@
 `IsAjax` - мы в ajax-запросе ?
 
 
-
-###**CurrencyHelper** - валюты
+##
+**CurrencyHelper** - валюты
 
 `getFormattedEndingCurrency` - склонение текстового написания валюты в зависимости от суммы 
 
 
-
-###**DateTimeHelper** - дата-время
+##
+**DateTimeHelper** - дата-время
 
 `dateHumanitized` - форматирование даты/времени в человекоудобный формат
 
 `timeToMinutes` - время в минутах
 
 
-
-###**FacetIndexHelper** - фасетный индекс
+##
+**FacetIndexHelper** - фасетный индекс
 
 `cleanFacetIndex` - очистка фасетного индекса
 
 
-
-###**FilesHelper** - файлы
+##
+**FilesHelper** - файлы
 
 `getFileExt` - получение расширения файла
 
 
-
-###**HighLoadBlockHelper** - HL-блоки
+##
+**HighLoadBlockHelper** - HL-блоки
 
 `GetElementByXMLID` - получение данных из HL блока по XML_ID элемента
 
 
-
-###**IBlockHelper** - инфоблоки
+##
+**IBlockHelper** - инфоблоки
 
 `clear` - полностью очищает инфоблок
 
@@ -111,36 +111,36 @@
 `sectionHasItems` - не пустая ли секция ? 
 
 
-
-###**LogHelper** - логирование
+##
+**LogHelper** - логирование
 
 `addToLog` - запись строковых данных в лог
 
 
-
-###**PricesHelper** - цены
+##
+**PricesHelper** - цены
 
 `formatCurrency` - форматирование цены
 
 `getSaleValue` - вычисление скидки
 
 
-
-###**SaleHelper** - интернет-магазин
+##
+**SaleHelper** - интернет-магазин
 
 `getLocationIdByCityId` - определение id города по id местоположения
 
 `getOrderPropertyValue` - получение свойства заказа по коду свойства
 
 
-
-###**SearchHelper** - поиск
+##
+**SearchHelper** - поиск
 
 `reIndexCatalog` = переиндексация
 
 
-
-###**StringHelper** - строки
+##
+**StringHelper** - строки
 
 `startsWith` - проверяет, начинается ли строка с указанного символа/строки
 
@@ -151,8 +151,8 @@
 `mbUcfirst` - мультибайтовый аналог ucfirst — преобразует первый символ строки в верхний регистр
 
 
-
-###**UrlHelper** - url
+##
+**UrlHelper** - url
 
 `removeKeyFromURLString` - удаление параметра из url
 
@@ -165,8 +165,8 @@
 `selfURL` - получение URL текущей страницы
 
 
-
-###**UserHelper** - пользователи
+##
+**UserHelper** - пользователи
 
 `getUserInfoByIp` - получение информации о пользователе по ip
 
