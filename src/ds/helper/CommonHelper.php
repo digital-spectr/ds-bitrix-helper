@@ -5,7 +5,9 @@
  * Date: 21.01.2018
  * Time: 16:36
  */
+
 namespace ds\helper;
+
 use Bitrix\Main\Loader;
 
 class CommonHelper
@@ -93,11 +95,23 @@ class CommonHelper
 
     /**
      * @param $arr
+     * @param bool $onlyAdmin 
      */
-    public static function Debug($arr) {
-        echo '<pre>';
-        print_r($arr);
-        echo '</pre>';
+    public static function Debug($arr, $onlyAdmin = true)
+    {
+        global $USER;
+        if ($onlyAdmin) {
+            if ($USER->isAdmin()) {
+                echo '<pre>';
+                print_r($arr);
+                echo '</pre>';
+            }
+        } else {
+            echo '<pre>';
+            print_r($arr);
+            echo '</pre>';
+        }
+
     }
 
     /**
@@ -141,7 +155,8 @@ class CommonHelper
      * @param $url
      * @return mixed
      */
-    public static function getYoutubeVideoID($url) {
+    public static function getYoutubeVideoID($url)
+    {
         preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $url, $matches);
         return reset($matches);
     }
@@ -154,7 +169,8 @@ class CommonHelper
     /**
      * авторизация под админом
      */
-    public static function adminAuthorize() {
+    public static function adminAuthorize()
+    {
         global $USER;
         $USER->Authorize(1);
     }
@@ -195,11 +211,10 @@ class CommonHelper
     /**
      * @return bool
      */
-    public static function IsAjax(){
-        return ( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && ! empty( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ) == 'xmlhttprequest' );
+    public static function IsAjax()
+    {
+        return (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
     }
-
-
 
 
 }

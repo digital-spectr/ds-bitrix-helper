@@ -15,11 +15,12 @@ class ArrayHelper
      * @param $array
      * @return stdClass
      */
-    public static function arrayToObject($array) {
+    public static function arrayToObject($array)
+    {
         $obj = new stdClass;
-        foreach($array as $k => $v) {
-            if(strlen($k)) {
-                if(is_array($v)) {
+        foreach ($array as $k => $v) {
+            if (strlen($k)) {
+                if (is_array($v)) {
                     $obj->{$k} = array_to_object($v);
                 } else {
                     $obj->{$k} = $v;
@@ -44,7 +45,8 @@ class ArrayHelper
         $value,
         $asc = true,
         $preserveKeys = false
-    ) {
+    )
+    {
         if (is_object(reset($array))) {
             $preserveKeys ? uasort($array,
                 function ($a, $b) use ($value, $asc) {
@@ -352,12 +354,13 @@ class ArrayHelper
      * @param $TIMETABLE
      * @return array
      */
-    public static function parseTimeTable($TIMETABLE){
+    public static function parseTimeTable($TIMETABLE)
+    {
 
         if ($objTimeTable = json_decode($TIMETABLE)) {
 
-            for($weekday = 0; $weekday < 7; $weekday++){
-                foreach($objTimeTable->$weekday as $arTimeInterval) {
+            for ($weekday = 0; $weekday < 7; $weekday++) {
+                foreach ($objTimeTable->$weekday as $arTimeInterval) {
 
                     $arTimeTableResult[] = array(
                         "startWorkTime" => $arTimeInterval[0],
@@ -396,7 +399,6 @@ class ArrayHelper
 
 
         return ($arTimeTableResult);
-
 
 
     }
@@ -497,9 +499,9 @@ class ArrayHelper
      * @param $keyElementToRemove
      * @param $array
      */
-    public static function removeElementByKey($keyElementToRemove, &$array) {
-        if ($array[$keyElementToRemove])
-        {
+    public static function removeElementByKey($keyElementToRemove, &$array)
+    {
+        if ($array[$keyElementToRemove]) {
             unset($array[$keyElementToRemove]);
         }
     }
@@ -510,10 +512,11 @@ class ArrayHelper
      * @param $arCoordinates
      * @return float|int
      */
-    public static function arithmeticalMean($arCoordinates) {
+    public static function arithmeticalMean($arCoordinates)
+    {
         $count = count($arCoordinates);
         $sum = array_sum($arCoordinates);
-        $am = $sum/$count;
+        $am = $sum / $count;
 
         return $am;
     }
@@ -669,22 +672,22 @@ class ArrayHelper
      * @param null $indexKey
      * @return array|bool
      */
-    public static function arrayColumn(array $input, $columnKey, $indexKey = null) {
+    public static function arrayColumn(array $input, $columnKey, $indexKey = null)
+    {
         $array = array();
         foreach ($input as $value) {
-            if ( !array_key_exists($columnKey, $value)) {
+            if (!array_key_exists($columnKey, $value)) {
                 trigger_error("Key \"$columnKey\" does not exist in array");
                 return false;
             }
             if (is_null($indexKey)) {
                 $array[] = $value[$columnKey];
-            }
-            else {
-                if ( !array_key_exists($indexKey, $value)) {
+            } else {
+                if (!array_key_exists($indexKey, $value)) {
                     trigger_error("Key \"$indexKey\" does not exist in array");
                     return false;
                 }
-                if ( ! is_scalar($value[$indexKey])) {
+                if (!is_scalar($value[$indexKey])) {
                     trigger_error("Key \"$indexKey\" does not contain scalar value");
                     return false;
                 }
@@ -695,5 +698,25 @@ class ArrayHelper
     }
 
 
+    /**
+     * @param $array
+     * @param $charset_in
+     * @param $charset_out
+     * @return array|bool
+     */
+    public static function convertArray($array, $charset_in = 'UTF-8', $charset_out = 'windows-1251')
+    {
+        global $APPLICATION;
+        if (is_array($array) && $array) {
+            foreach ($array as $key => $arVal) {
+                foreach ($arVal as $key2 => $value) {
+                    $array[$key][$key2] = $APPLICATION->ConvertCharset($value, $charset_in, $charset_out);
+                }
+            }
+        } else {
+            $array = false;
+        }
+        return $array;
+    }
 
 }
